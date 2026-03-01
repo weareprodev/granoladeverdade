@@ -1046,7 +1046,7 @@ footer {
   background: #f9f5ef;
   color: #754723;
   border-top: 1px solid var(--border);
-  padding: 44px 0 54px;
+  padding: 22px 0 27px;
   text-align: center;
 }
 
@@ -1324,9 +1324,26 @@ footer a {
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   margin-top: 5px;
   cursor: var(--interactive-cursor);
+}
+
+.wa-hint-icon-wrap {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--wa);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wa-hint-icon {
+  width: 10px;
+  height: 10px;
+  display: block;
 }
 
 .delivery-note {
@@ -1575,10 +1592,10 @@ footer a {
   box-shadow: 0 8px 32px rgba(37, 211, 102, .48);
 }
 
-.wa-float svg {
+.wa-float-icon {
   width: 24px;
   height: 24px;
-  fill: #fff;
+  display: block;
 }
 
 @keyframes bounce-in {

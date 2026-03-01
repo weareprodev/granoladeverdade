@@ -114,7 +114,7 @@ function renderBranding() {
 
   const waFloat = document.querySelector('.wa-float');
   if (waFloat) {
-    const icon = waFloat.querySelector('svg');
+    const icon = waFloat.querySelector('svg, img');
     const iconClone = icon ? icon.cloneNode(true) : null;
 
     waFloat.innerHTML = '';
@@ -426,7 +426,19 @@ function renderOrderPage() {
       if (option.isCustom) {
         const waHint = document.createElement('div');
         waHint.className = 'wa-hint';
-        waHint.textContent = '💬 ' + (option.customButton || 'WhatsApp');
+
+        const iconWrap = document.createElement('span');
+        iconWrap.className = 'wa-hint-icon-wrap';
+
+        const iconImg = document.createElement('img');
+        iconImg.className = 'wa-hint-icon';
+        iconImg.src = 'GVIMG/Digital_Glyph_White.svg';
+        iconImg.alt = '';
+
+        iconWrap.appendChild(iconImg);
+        waHint.appendChild(iconWrap);
+        waHint.appendChild(document.createTextNode(option.customButton || 'WhatsApp'));
+
         waHint.addEventListener('click', (event) => {
           event.stopPropagation();
           customOrder();

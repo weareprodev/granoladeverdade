@@ -204,8 +204,40 @@ function renderIngredients() {
     return group;
   };
 
-  track.appendChild(buildGroup());
-  track.appendChild(buildGroup());
+  const baseGroup = buildGroup();
+  track.appendChild(baseGroup);
+
+  const groupWidth = Math.ceil(baseGroup.getBoundingClientRect().width);
+  if (!groupWidth) return;
+
+  const viewportWidth = track.parentElement?.clientWidth || window.innerWidth;
+  const totalGroups = Math.max(2, Math.ceil(viewportWidth / groupWidth) + 2);
+
+  for (let i = 1; i < totalGroups; i += 1) {
+    track.appendChild(baseGroup.cloneNode(true));
+  }
+
+  track.style.setProperty('--ing-shift', groupWidth + 'px');
+}
+
+function setupIngredientsMarquee() {
+  let resizeTimeout = null;
+
+  const rerender = () => {
+    window.clearTimeout(resizeTimeout);
+    resizeTimeout = window.setTimeout(() => {
+      renderIngredients();
+    }, 140);
+  };
+
+  window.addEventListener('resize', rerender);
+  window.addEventListener('orientationchange', rerender);
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => {
+      renderIngredients();
+    }).catch(() => {});
+  }
 }
 
 function renderStats() {
@@ -290,7 +322,18 @@ function renderTestimonials() {
 
     const avatar = document.createElement('div');
     avatar.className = 'tcard-av';
-    avatar.textContent = testimonial.avatar || '•';
+
+    if (testimonial.avatarImage) {
+      const avatarImg = document.createElement('img');
+      avatarImg.className = 'tcard-av-img';
+      avatarImg.src = testimonial.avatarImage;
+      avatarImg.alt = testimonial.name ? ('Foto de ' + testimonial.name) : 'Foto do cliente';
+      avatarImg.loading = 'lazy';
+      avatarImg.decoding = 'async';
+      avatar.appendChild(avatarImg);
+    } else {
+      avatar.textContent = testimonial.avatar || '•';
+    }
 
     const metaWrap = document.createElement('div');
 
@@ -646,6 +689,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderBranding();
   renderHero();
   renderIngredients();
+  setupIngredientsMarquee();
   renderStats();
   renderAbout();
   renderTestimonialsHeader();

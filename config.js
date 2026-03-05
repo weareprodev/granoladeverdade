@@ -119,8 +119,8 @@ const CONFIG = {
   // ============================================================
   stats: [
     { value: 'Natural', label: '11+ Ingredientes selecionados' },
-    { value: '400g', label: 'Em cada pacote' },
-    { value: 'Zero', label: 'Conservantes adicionados' },
+    { value: '400g', label: 'Grãos e castanhas em cada pacote' },
+    { value: 'Zero', label: 'Conservantes artificiais adicionados' },
   ],
 
   // ============================================================
@@ -168,27 +168,57 @@ const CONFIG = {
   testimonials: [
     {
       avatar: '👩',
-      name: 'Ana Paula M.',
+      avatarImage: 'GVIMG/depoimentos/Adri.jpeg',
+      name: 'Adri',
       meta: 'Cliente há 4 meses',
       stars: '⭐⭐⭐⭐⭐',
-      text: 'Comprei os 3 pacotes por causa da entrega grátis e não me arrependo. É a melhor granola que já comi. Já indiquei pra todo mundo!',
+      text: 'E a melhor granola que nós aqui de casa já comemos. Meu filho não quer mais outra. Parabéns pelo trabalho de vocês"',
       featured: false
     },
     {
       avatar: '👨',
-      name: 'Rodrigo S.',
-      meta: 'Cliente frequente',
+      avatarImage: 'GVIMG/depoimentos/Jack.jpeg',
+      name: 'Jack',
+      meta: 'Cliente há 6 meses',
       stars: '⭐⭐⭐⭐⭐',
-      text: 'Diferente de qualquer granola do supermercado. Dá pra sentir que é artesanal. Minha família inteira virou fã. Peço toda semana.',
+      text: 'Vocês precisam provar! Não tem nenhuma granola do mercado ou do celeiro que chegue próximo disso..',
       featured: true
     },
     {
       avatar: '👩‍⚕️',
-      name: 'Dra. Fernanda L.',
-      meta: 'Nutricionista',
+      avatarImage: 'GVIMG/depoimentos/Gabriel.png',
+      name: 'Gabriel',
+      meta: 'Cliente há 1 ano',
       stars: '⭐⭐⭐⭐⭐',
-      text: 'Sou nutricionista e indico para meus pacientes. Lista limpa, sem enrolação. Incrível com iogurte grego e frutas.',
+      text: 'Faz parte da minha dieta desde que conheci a receita, substitiu os doces de calorias vazias deixando a sobremesa repleta de nutrientes',
       featured: false
+    },
+    {
+      avatar: '👨‍💼',
+      avatarImage: 'GVIMG/depoimentos/Gabriela.jpeg',
+      name: 'Gabriela',
+      meta: 'Cliente há 3 meses',
+      stars: '⭐⭐⭐⭐⭐',
+      text: 'Sério, virou item fixo no café da manhã aqui em casa. Crocante na medida e com sabor bem natural.',
+      featured: true
+    },
+    {
+      avatar: '👩‍🦱',
+      avatarImage: 'GVIMG/depoimentos/Natasha.png',
+      name: 'Natasha',
+      meta: 'Cliente há 6 meses',
+      stars: '⭐⭐⭐⭐⭐',
+      text: 'É a granola mais deliciosa do Brasill..\n\nNa verdade é a mais deliciosa que já experimentei na vida!',
+      featured: false
+    },
+    {
+      avatar: '👩‍⚕️',
+      avatarImage: 'GVIMG/depoimentos/Andressa.png',
+      name: 'Andressa',
+      meta: 'Cliente há 1 mês',
+      stars: '⭐⭐⭐⭐⭐',
+      text: 'Comprei logo dois, ameeei, as crianças super amaram também. aproveitei que to com a família já ofereci e compartilhei o instagram da granola com todo mundo',
+      featured: true
     }
   ],
 

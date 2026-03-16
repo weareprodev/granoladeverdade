@@ -64,7 +64,7 @@ const CONFIG = {
   // ============================================================
   nav: {
     logoAlt: 'Granola de Verdade',
-    ctaText: '🛒 Fazer pedido'
+    ctaText: '🛒 Fazer meu pedido'
   },
 
   // ============================================================

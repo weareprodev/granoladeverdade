@@ -144,20 +144,26 @@ nav.scrolled {
 }
 
 .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--primary);
   color: #fff;
-  padding: 9px 18px;
+  padding: 15px 23px;
   border-radius: 99px;
-  font-size: .82rem;
+  font-size: 0.95rem;
   font-weight: 600;
+  line-height: 1.2;
   cursor: pointer;
   border: none;
+  box-shadow: 0 4px 20px rgba(124, 74, 30, .28);
   transition: background .2s, transform .1s;
   white-space: nowrap;
 }
 
 .nav-cta:hover {
   background: var(--primary-h);
+  box-shadow: 0 6px 28px rgba(124, 74, 30, .38);
 }
 
 .nav-cta:active {
